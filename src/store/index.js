@@ -1,39 +1,36 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { groupBy } from 'lodash'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    types: [
+    items: [
       {
+        id: 1,
         type: 'Goutte',
-        items: [
-          {
-            name: 'Mirabelle',
-            degree: 45
-          },
-          {
-            name: 'Abricotine',
-            degree: 56
-          }
-        ]
+        name: 'Mirabelle',
+        degree: 45
       },
       {
+        id: 2,
+        type: 'Goutte',
+        name: 'Abricotine',
+        degree: 56
+      },
+      {
+        id: 3,
         type: 'Liqueur',
-        items: [
-          {
-            name: 'Suze',
-            degree: 20
-          }
-        ]
-      }
+        name: 'Mirabelle',
+        degree: 45
+      },
     ]
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
+  
+  getters: {
+    types ({ items }) {
+      return groupBy(items, 'type')
+    }
   }
 })

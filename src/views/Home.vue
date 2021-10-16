@@ -3,13 +3,13 @@
     <h1>Le coffre magique</h1>
     <ul>
       <li
-        v-for="type in $store.state.types"
-        :key="type.type"
+        v-for="(items, type) in $store.getters.types"
+        :key="type"
       >
-        {{ type.type }}
+        {{ type }}
         <ul>
           <li
-            v-for="item in type.items"
+            v-for="item in items"
             :key="item.name"
           >
             {{ item.name }}
