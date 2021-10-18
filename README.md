@@ -5,9 +5,15 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Development
+Run server for the app
 ```
 npm run serve
+```
+
+Run server for the API
+```
+php -S localhost:8000 -t public
 ```
 
 ### Compiles and minifies for production
