@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <h1>Le coffre magique</h1>
-    <ul>
+    <h1 style="float:left">Le coffre magique</h1>
+    <div style="float:right">
+      <button @click="$store.dispatch('save')">
+        💾
+      </button>
+    </div>
+    <ul style="clear:both">
       <li
         v-for="(items, type) in $store.getters.types"
         :key="type"

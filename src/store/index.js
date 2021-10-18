@@ -53,6 +53,12 @@ export default new Vuex.Store({
         ...clone(state.newItem)
       })
       commit('resetNewItem')
+    },
+    save ({ state }) {
+      fetch(`${process.env.VUE_APP_API}/save.php`, {
+        method: "POST",
+        body: JSON.stringify(state.data)
+      })
     }
   }
 })
