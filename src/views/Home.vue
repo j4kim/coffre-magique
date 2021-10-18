@@ -17,5 +17,8 @@
         </ul>
       </li>
     </ul>
+    <router-link tag="button" to="/new">
+      +
+    </router-link>
   </div>
 </template>
