@@ -9,8 +9,8 @@
         💾
       </button>
     </div>
-    <ul style="clear:both">
-      <li
+    <main style="clear:both">
+      <div
         v-for="(items, type) in $store.getters.types"
         :key="type"
       >
@@ -23,8 +23,8 @@
             {{ item.name }}
           </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </main>
     <router-link tag="button" to="/new">
       +
     </router-link>
