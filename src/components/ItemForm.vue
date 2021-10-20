@@ -1,0 +1,39 @@
+<template>
+  <form class="item-form">
+    <h1>{{ title }}</h1>
+    <p>
+      <input
+        type="text"
+        placeholder="Nom"
+        v-model="$store.state[attribute].name"
+      >
+    </p>
+    <p>
+      <input
+        type="text"
+        placeholder="Type"
+        v-model="$store.state[attribute].type"
+      >
+    </p>
+    <p>
+      <button type="submit" @click="submit" v-text="title"/>
+    </p>
+  </form>
+</template>
+
+<script>
+export default {
+  props: {
+    title: String,
+    action: String,
+    attribute: String
+  },
+
+  methods: {
+    submit() {
+      this.$store.dispatch(this.action)
+      this.$router.push('/')
+    }
+  }
+}
+</script>
