@@ -2,7 +2,6 @@
   <item-form
     title="Ajouter"
     action="addNewItem"
-    attribute="newItem"
   />
 </template>
 

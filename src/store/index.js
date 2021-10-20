@@ -10,12 +10,7 @@ export default new Vuex.Store({
       items: []
     },
     savedData: '{items:[]}',
-    newItem: {
-      name: '',
-      type: '',
-      degree: undefined,
-      dose: 4
-    }
+    editable: {}
   },
   
   getters: {
@@ -41,8 +36,8 @@ export default new Vuex.Store({
     add ({ data }, item) {
       data.items.push(item)
     },
-    resetNewItem (state) {
-      state.newItem = {}
+    setEditable (state, item = {}) {
+      state.editable = clone(item)
     }
   },
 
@@ -55,9 +50,9 @@ export default new Vuex.Store({
     addNewItem ({ state, getters, commit }) {
       commit('add', {
         id: getters.newId,
-        ...clone(state.newItem)
+        ...clone(state.editable)
       })
-      commit('resetNewItem')
+      commit('setEditable')
     },
     save ({ state, dispatch }) {
       fetch(`${process.env.VUE_APP_API}/save.php`, {

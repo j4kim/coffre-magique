@@ -5,14 +5,14 @@
       <input
         type="text"
         placeholder="Nom"
-        v-model="$store.state[attribute].name"
+        v-model="$store.state.editable.name"
       >
     </p>
     <p>
       <input
         type="text"
         placeholder="Type"
-        v-model="$store.state[attribute].type"
+        v-model="$store.state.editable.type"
       >
     </p>
     <p>
