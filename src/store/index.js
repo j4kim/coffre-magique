@@ -52,7 +52,6 @@ export default new Vuex.Store({
         id: getters.newId,
         ...clone(state.editable)
       })
-      commit('setEditable')
     },
     save ({ state, dispatch }) {
       fetch(`${process.env.VUE_APP_API}/save.php`, {

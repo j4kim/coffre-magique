@@ -9,6 +9,10 @@
 import ItemForm from "@/components/ItemForm"
 
 export default {
-  components: { ItemForm }
+  components: { ItemForm },
+
+  created () {
+    this.$store.commit('setEditable')
+  }
 }
 </script>
