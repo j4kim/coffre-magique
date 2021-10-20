@@ -9,6 +9,7 @@ export default new Vuex.Store({
     data: {
       items: []
     },
+    savedData: '{items:[]}',
     newItem: {
       name: '',
       type: '',
@@ -26,12 +27,16 @@ export default new Vuex.Store({
     },
     newId (state, { last }) {
       return last ? last.id + 1 : 1
+    },
+    hasChanged (state) {
+      return JSON.stringify(state.data) !== state.savedData
     }
   },
 
   mutations: {
-    reset ({ data }, payload) {
-      Object.assign(data, payload)
+    reset (state, payload) {
+      state.savedData = JSON.stringify(payload)
+      Object.assign(state.data, payload)
     },
     add ({ data }, item) {
       data.items.push(item)
@@ -54,10 +59,12 @@ export default new Vuex.Store({
       })
       commit('resetNewItem')
     },
-    save ({ state }) {
+    save ({ state, dispatch }) {
       fetch(`${process.env.VUE_APP_API}/save.php`, {
         method: "POST",
         body: JSON.stringify(state.data)
+      }).then(() => {
+        return dispatch('fetch')
       })
     }
   }

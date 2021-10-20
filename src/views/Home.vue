@@ -2,7 +2,10 @@
   <div class="home">
     <h1 style="float:left">Le coffre magique</h1>
     <div style="float:right">
-      <button @click="$store.dispatch('save')">
+      <button
+        @click="$store.dispatch('save')"
+        :disabled="!$store.getters.hasChanged"
+      >
         💾
       </button>
     </div>
