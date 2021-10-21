@@ -1,5 +1,5 @@
 <template>
-  <form class="item-form">
+  <form class="item-form" @submit.prevent="submit">
     <h1>{{ title }}</h1>
     <p>
       <input
@@ -16,7 +16,7 @@
       >
     </p>
     <p>
-      <button type="submit" @click="submit" v-text="title"/>
+      <button type="submit" v-text="title"/>
     </p>
   </form>
 </template>
