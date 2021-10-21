@@ -45,6 +45,9 @@ export default new Vuex.Store({
     editItem ({ data, editable }) {
       let index = data.items.findIndex(i => i.id == editable.id)
       data.items.splice(index, 1, editable)
+    },
+    deleteItem ({ data, editable }) {
+      data.items = data.items.filter(i => i.id != editable.id)
     }
   },
 
