@@ -25,13 +25,12 @@
 export default {
   props: {
     title: String,
-    action: String,
     attribute: String
   },
 
   methods: {
     submit() {
-      this.$store.dispatch(this.action)
+      this.$emit('submit')
       this.$router.push('/')
     }
   }

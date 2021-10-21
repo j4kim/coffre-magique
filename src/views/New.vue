@@ -1,7 +1,7 @@
 <template>
   <item-form
     title="Ajouter"
-    action="addNewItem"
+    @submit="$store.dispatch('addNewItem')"
   />
 </template>
 
