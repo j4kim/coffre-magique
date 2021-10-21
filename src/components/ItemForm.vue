@@ -9,11 +9,7 @@
       >
     </p>
     <p>
-      <input
-        type="text"
-        placeholder="Type"
-        v-model="$store.state.editable.type"
-      >
+      <type-input v-model="$store.state.editable.type"/>
     </p>
     <p>
       <button type="submit" v-text="title"/>
@@ -22,7 +18,11 @@
 </template>
 
 <script>
+import TypeInput from './TypeInput'
+
 export default {
+  components: { TypeInput },
+
   props: {
     title: String,
     attribute: String
