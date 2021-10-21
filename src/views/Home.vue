@@ -20,7 +20,9 @@
             v-for="item in items"
             :key="item.id"
           >
-            {{ item.name }}
+            <router-link :to="`/edit/${item.id}`">
+              {{ item.name }}
+            </router-link>
           </li>
         </ul>
       </div>

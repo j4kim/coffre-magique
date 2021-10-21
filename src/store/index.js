@@ -25,6 +25,9 @@ export default new Vuex.Store({
     },
     hasChanged (state) {
       return JSON.stringify(state.data) !== state.savedData
+    },
+    byId: ({ data }) => (id) => {
+      return data.items.find(i => i.id == id)
     }
   },
 
@@ -38,6 +41,10 @@ export default new Vuex.Store({
     },
     setEditable (state, item = {}) {
       state.editable = clone(item)
+    },
+    editItem ({ data, editable }) {
+      let index = data.items.findIndex(i => i.id == editable.id)
+      data.items.splice(index, 1, editable)
     }
   },
 
