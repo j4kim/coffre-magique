@@ -9,6 +9,16 @@
       >
     </p>
     <p>
+      <input
+        type="number"
+        placeholder="Degré"
+        min="0"
+        max="100"
+        v-model="$store.state.editable.degree"
+      > %
+    </p>
+    <p>
+      Type:
       <type-input v-model="$store.state.editable.type"/>
     </p>
     <p>
