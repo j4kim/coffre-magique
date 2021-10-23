@@ -1,6 +1,7 @@
 <template>
   <div>
-    Bouteille
+    <strong v-if="selected">Bouteille</strong>
+    <span v-else @click="$store.commit('selectBottle', index)">Bouteille</span>
     <input
       type="number"
       min="0"
@@ -19,6 +20,13 @@
 
 <script>
 export default {
-  props: ['bottle'],
+  props: ['bottle', 'index'],
+
+  computed: {
+    selected () {
+      let index = this.$store.state.editable.selectedBottleIndex || 0
+      return index == this.index
+    }
+  }
 }
 </script>

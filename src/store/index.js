@@ -50,8 +50,12 @@ export default new Vuex.Store({
       data.items = data.items.filter(i => i.id != editable.id)
     },
     drink ({ editable }) {
-      let bottle = editable.bottles[0]
+      let index = editable.selectedBottleIndex || 0
+      let bottle = editable.bottles[index]
       bottle.remains = Math.max(0, bottle.remains - editable.dose)
+    },
+    selectBottle ({ editable }, index) {
+      editable.selectedBottleIndex = index
     }
   },
 

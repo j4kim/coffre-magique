@@ -16,6 +16,7 @@
         v-for="(bottle, index) in $store.state.editable.bottles"
         :key="index"
         :bottle="bottle"
+        :index="index"
       />
     </div>
   </div>

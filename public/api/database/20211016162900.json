@@ -6,6 +6,7 @@
       "name": "Mirabelle",
       "degree": 45,
       "dose": 4,
+      "selectedBottleIndex": 0,
       "bottles": [
         {
           "volume": 30,
@@ -19,6 +20,7 @@
       "name": "Abricotine",
       "degree": 56,
       "dose": 4,
+      "selectedBottleIndex": 0,
       "bottles": [
         {
           "volume": 70,
@@ -36,6 +38,7 @@
       "name": "Suze",
       "degree": 45,
       "dose": 4,
+      "selectedBottleIndex": 0,
       "bottles": [
         {
           "volume": 100,
