@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { clone, groupBy, maxBy } from 'lodash'
+import { cloneDeep, groupBy, maxBy } from 'lodash'
 
 Vue.use(Vuex)
 
@@ -40,7 +40,7 @@ export default new Vuex.Store({
       data.items.push(item)
     },
     setEditable (state, item = {}) {
-      state.editable = clone(item)
+      state.editable = cloneDeep(item)
     },
     editItem ({ data, editable }) {
       let index = data.items.findIndex(i => i.id == editable.id)
@@ -60,7 +60,7 @@ export default new Vuex.Store({
     addNewItem ({ state, getters, commit }) {
       commit('add', {
         id: getters.newId,
-        ...clone(state.editable)
+        ...cloneDeep(state.editable)
       })
     },
     save ({ state, dispatch }) {
