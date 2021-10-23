@@ -22,6 +22,10 @@
       Type:
       <type-input v-model="$store.state.editable.type"/>
     </p>
+    <hr>
+    <h3>Stock</h3>
+    <stock/>
+    <hr>
     <p>
       <button type="submit" v-text="title"/>
     </p>
@@ -30,9 +34,10 @@
 
 <script>
 import TypeInput from './TypeInput'
+import Stock from './Stock'
 
 export default {
-  components: { TypeInput },
+  components: { TypeInput, Stock },
 
   props: {
     title: String,
