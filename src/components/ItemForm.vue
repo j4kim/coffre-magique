@@ -1,5 +1,6 @@
 <template>
   <form class="item-form" @submit.prevent="submit">
+    <router-link to="/">Retour</router-link>
     <h1>{{ title }}</h1>
     <p>
       <input
