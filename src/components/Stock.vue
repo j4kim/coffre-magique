@@ -9,5 +9,20 @@
       step="2"
       v-model="$store.state.editable.dose"
     > cl
+    <div>
+      <bottle
+        v-for="(bottle, index) in $store.state.editable.bottles"
+        :key="index"
+        :index="index"
+      />
+    </div>
   </div>
 </template>
+
+<script>
+import Bottle from "./Bottle"
+
+export default {
+  components: { Bottle }
+}
+</script>
