@@ -4,21 +4,21 @@
     <input
       type="number"
       min="0"
-      :max="$store.state.editable.bottles[index].volume"
-      v-model="$store.state.editable.bottles[index].remains"
+      :max="bottle.volume"
+      v-model="bottle.remains"
     > cl 
     /
     <input
       type="number"
-      :min="$store.state.editable.bottles[index].remains"
+      :min="bottle.remains"
       max="200"
-      v-model="$store.state.editable.bottles[index].volume"
+      v-model="bottle.volume"
     > cl 
   </div>
 </template>
 
 <script>
 export default {
-  props: ['index'],
+  props: ['bottle'],
 }
 </script>
