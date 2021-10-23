@@ -1,5 +1,5 @@
 <template>
-  <form class="item-form" @submit.prevent="submit">
+  <div class="item-form">
     <router-link to="/">Retour</router-link>
     <h1>{{ title }}</h1>
     <p>
@@ -27,9 +27,9 @@
     <stock/>
     <hr>
     <p>
-      <button type="submit" v-text="title"/>
+      <button type="submit" v-text="title" @click="submit"/>
     </p>
-  </form>
+  </div>
 </template>
 
 <script>
