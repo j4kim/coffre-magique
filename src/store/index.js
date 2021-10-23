@@ -52,7 +52,11 @@ export default new Vuex.Store({
     drink ({ editable }) {
       let index = editable.selectedBottleIndex || 0
       let bottle = editable.bottles[index]
-      bottle.remains = Math.max(0, bottle.remains - editable.dose)
+      if (bottle.remains == 0 && confirm("Supprimer la bouteille ?")) {
+        editable.bottles.splice(index, 1)
+      } else {
+        bottle.remains = Math.max(0, bottle.remains - editable.dose)
+      }
     },
     selectBottle ({ editable }, index) {
       editable.selectedBottleIndex = index
