@@ -48,6 +48,10 @@ export default new Vuex.Store({
     },
     deleteItem ({ data, editable }) {
       data.items = data.items.filter(i => i.id != editable.id)
+    },
+    drink ({ editable }) {
+      let bottle = editable.bottles[0]
+      bottle.remains = Math.max(0, bottle.remains - editable.dose)
     }
   },
 

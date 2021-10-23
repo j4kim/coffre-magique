@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button>Boire</button>
+    <button
+      @click="$store.commit('drink')"
+    >Boire</button>
     <input
       type="number"
       placeholder="Dose"
