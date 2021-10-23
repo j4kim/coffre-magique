@@ -19,6 +19,9 @@
         :index="index"
       />
     </div>
+    <button
+      @click="$store.commit('addBottle')"
+    >Ajouter une bouteille</button>
   </div>
 </template>
 

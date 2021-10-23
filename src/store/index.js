@@ -39,7 +39,7 @@ export default new Vuex.Store({
     add ({ data }, item) {
       data.items.push(item)
     },
-    setEditable (state, item = {}) {
+    setEditable (state, item = { bottles:[], dose: 4 }) {
       state.editable = cloneDeep(item)
     },
     editItem ({ data, editable }) {
@@ -60,6 +60,19 @@ export default new Vuex.Store({
     },
     selectBottle ({ editable }, index) {
       editable.selectedBottleIndex = index
+    },
+    addBottle ({ editable }) {
+      editable.bottles.push(
+        editable.bottles.length ?
+          {
+            volume: editable.bottles[0].volume,
+            remains: editable.bottles[0].volume
+          } :
+          {
+            volume: 75,
+            remains: 75
+          }
+      )
     }
   },
 
