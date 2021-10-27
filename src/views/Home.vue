@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 style="float:left">Le coffre magique</h1>
+    <h1 class="text-3xl font-bold ">Le coffre magique</h1>
     <div style="float:right">
       <button
         @click="$store.dispatch('save')"
