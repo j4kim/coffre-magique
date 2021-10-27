@@ -4,8 +4,6 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-import "tailwindcss/tailwind.css"
-
 store.dispatch('fetch')
 
 new Vue({
