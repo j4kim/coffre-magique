@@ -1,12 +1,15 @@
 import Vue from 'vue'
+import Vuesax from 'vuesax'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-Vue.config.productionTip = false
+import 'vuesax/dist/vuesax.css'
 
 store.dispatch('fetch')
+
+Vue.use(Vuesax)
 
 new Vue({
   router,
