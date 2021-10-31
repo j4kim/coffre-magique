@@ -7,7 +7,7 @@
     </div>
     <header>
       <img src="/img/icons/apple-touch-icon-120x120.png">
-      <h1>Le coffre magique</h1>
+      <h1>Le Coffre Magique</h1>
     </header>
     <main>
       <div
@@ -41,10 +41,14 @@
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 .home {
   header {
     text-align: center;
     margin-bottom: 48px;
+    font-family: "Cinzel";
+    text-decoration: underline;
+    text-decoration-color: #ffcd69;
   }
   main {
     margin-bottom: 24px;
