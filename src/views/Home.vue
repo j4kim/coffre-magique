@@ -34,7 +34,7 @@
         </router-link>
       </div>
     </main>
-    <router-link tag="button" to="/new">
+    <router-link tag="button" to="/new" class="btn">
       +
     </router-link>
   </div>

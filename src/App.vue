@@ -15,5 +15,18 @@ html, body {
   margin: auto;
   padding: 48px 12px;
   font-family: 'Nunito';
+  button.btn {
+    background-color: #ffcd69;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #a866cb;
+      cursor: pointer;
+    }
+  }
 }
 </style>
