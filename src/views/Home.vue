@@ -41,7 +41,6 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 .home {
   header {
     text-align: center;
