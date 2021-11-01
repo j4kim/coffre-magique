@@ -64,7 +64,9 @@ export default new Vuex.Store({
     addBottle ({ editable }) {
       let defaultVolume = editable.bottles.length ? editable.bottles[0].volume : 75
       let volume = prompt("Volume de la nouvelle bouteille en cl", defaultVolume)
-      editable.bottles.push({ volume, remains: volume })
+      if (volume > 0) {
+        editable.bottles.push({ volume, remains: volume })
+      }
     }
   },
 
