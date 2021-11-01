@@ -1,17 +1,14 @@
 <template>
   <div class="stock">
     <div>
+      <div class="dose" @click="adaptDose">
+        <glass :volume="$store.state.editable.dose" />
+        <small>{{ $store.state.editable.dose }} cl</small>
+      </div>
       <button
         @click="$store.commit('drink')"
+        class="btn purple"
       >Boire</button>
-      <input
-        type="number"
-        placeholder="Dose"
-        min="2"
-        max="20"
-        step="2"
-        v-model="$store.state.editable.dose"
-      > cl
     </div>
     <bottle
       v-for="(bottle, index) in $store.state.editable.bottles"
@@ -32,9 +29,22 @@
 
 <script>
 import Bottle from "./Bottle"
+import Glass from "./Glass"
 
 export default {
-  components: { Bottle }
+  components: {
+    Bottle,
+    Glass,
+  },
+
+  methods: {
+    adaptDose () {
+      let dose = prompt("Quelle dose en cl ?", this.$store.state.editable.dose)
+      if (dose > 0) {
+        this.$store.state.editable.dose = dose
+      }
+    }
+  }
 }
 </script>
 
