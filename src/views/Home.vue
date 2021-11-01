@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <div v-if="$store.getters.hasChanged">
-      <button @click="$store.dispatch('save')">
+    <div v-if="$store.getters.hasChanged" class="save">
+      <button @click="$store.dispatch('save')" class="btn big">
         💾 Sauver
       </button>
     </div>
@@ -42,6 +42,14 @@
 
 <style lang="scss">
 .home {
+  .save {
+    margin-top: -48px;
+    margin-bottom: 48px;
+    button.btn {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+  }
   header {
     text-align: center;
     margin-bottom: 48px;
