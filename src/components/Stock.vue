@@ -19,9 +19,14 @@
       :bottle="bottle"
       :index="index"
     />
-    <button
-      @click="$store.commit('addBottle')"
-    >Ajouter une bouteille</button>
+    <div class="add">
+      <button
+        class="btn"
+        @click="$store.commit('addBottle')"
+      >
+        Ajouter une bouteille
+      </button>
+    </div>
   </div>
 </template>
 
@@ -42,16 +47,19 @@ export default {
   > * {
     margin: 8px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
     &.bottle {
-      width: 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4px;
+      min-width: 80px;
       svg {
         margin: 4px;
       }
+    }
+    &.add {
+      width: 110px;
     }
   }
 }
