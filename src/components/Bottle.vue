@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <strong v-if="selected">Bouteille</strong>
-    <span v-else @click="$store.commit('selectBottle', index)">Bouteille</span>
+  <div
+    class="bottle"
+    :style="{
+      border: `1px solid ${this.selected ? '#a866cb' : '#eee'}`,
+      borderRadius: '4px'
+    }"
+    @click="$store.commit('selectBottle', index)"
+  >
     <vue-bottle size="100" v-model="ratio"/>
     <small>
       {{ Math.round(bottle.remains) }} / {{ bottle.volume }} cl
