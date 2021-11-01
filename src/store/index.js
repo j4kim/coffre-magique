@@ -39,7 +39,7 @@ export default new Vuex.Store({
     add ({ data }, item) {
       data.items.push(item)
     },
-    setEditable (state, item = { bottles:[], dose: 4 }) {
+    setEditable (state, item = { bottles:[], dose: 4, selectedBottleIndex: 0 }) {
       state.editable = cloneDeep(item)
     },
     editItem ({ data, editable }) {
