@@ -7,7 +7,11 @@
     }"
     @click="$store.commit('selectBottle', index)"
   >
-    <vue-bottle :size="10 * Math.sqrt(this.bottle.volume)" v-model="ratio"/>
+    <vue-bottle
+      v-model="ratio"
+      :size="10 * Math.sqrt(this.bottle.volume)"
+      :speed="0.02"
+    />
     <small>
       {{ Math.round(bottle.remains) }} / {{ bottle.volume }} cl
     </small>
