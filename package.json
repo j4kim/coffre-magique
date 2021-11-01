@@ -12,6 +12,7 @@
     "lodash": "^4.17.21",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-bottle": "^0.3.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
