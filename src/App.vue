@@ -22,9 +22,16 @@ html, body {
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 4px;
+    cursor: pointer;
     &:hover {
       background-color: #a866cb;
-      cursor: pointer;
+    }
+    &.purple {
+      background-color: #a866cb;
+      color: white;
+      &:hover {
+        background-color: #884da7;
+      }
     }
   }
 }

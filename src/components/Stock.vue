@@ -49,19 +49,26 @@ export default {
 </script>
 
 <style lang="scss">
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 .stock {
   display: flex;
   overflow-x: auto;
   padding-bottom: 12px;
   margin: 0 -8px;
   > * {
-    margin: 8px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @extend .flex-center;
+    margin: 12px;
     padding: 4px;
+    .dose {
+      margin-bottom: 8px;
+      @extend .flex-center;
+    }
     &.bottle {
       min-width: 80px;
       svg {
