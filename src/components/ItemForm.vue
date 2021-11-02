@@ -2,26 +2,32 @@
   <div class="item-form">
     <router-link to="/">Retour</router-link>
     <h1>{{ title }}</h1>
-    <p>
+    <div class="field">
+      <div>
+        <small>Nom</small>
+      </div>
       <input
         type="text"
-        placeholder="Nom"
         v-model="$store.state.editable.name"
       >
-    </p>
-    <p>
+    </div>
+    <div class="field">
+      <div>
+        <small>Degré</small>
+      </div>
       <input
         type="number"
-        placeholder="Degré"
         min="0"
         max="100"
         v-model="$store.state.editable.degree"
       > %
-    </p>
-    <p>
-      Type:
+    </div>
+    <div class="field">
+      <div>
+        <small>Type</small>
+      </div>
       <type-input v-model="$store.state.editable.type"/>
-    </p>
+    </div>
     <hr>
     <h3>Stock</h3>
     <stock/>
@@ -52,3 +58,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.field {
+  margin-bottom: 8px;
+}
+</style>

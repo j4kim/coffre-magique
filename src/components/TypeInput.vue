@@ -43,3 +43,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+select {
+  margin-right: 8px;
+  height: 21px;
+}
+</style>
