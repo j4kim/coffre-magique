@@ -85,12 +85,6 @@ export default new Vuex.Store({
           commit('reset', data.data)
         })
     },
-    addNewItem ({ state, getters, commit }) {
-      commit('add', {
-        id: getters.newId,
-        ...cloneDeep(state.editable)
-      })
-    },
     save ({ state, dispatch }) {
       fetch(`${process.env.VUE_APP_API}/save.php`, {
         method: "POST",
@@ -98,6 +92,21 @@ export default new Vuex.Store({
       }).then(() => {
         return dispatch('fetch')
       })
-    }
+    },
+    update ({ commit, dispatch }) {
+      commit('editItem')
+      dispatch('save')
+    },
+    create ({ commit, dispatch, getters, state }) {
+      commit('add', {
+        id: getters.newId,
+        ...cloneDeep(state.editable)
+      })
+      dispatch('save')
+    },
+    delete ({ commit, dispatch }) {
+      commit('deleteItem')
+      dispatch('save')
+    },
   }
 })

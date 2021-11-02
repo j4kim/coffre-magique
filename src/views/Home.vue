@@ -1,10 +1,5 @@
 <template>
   <div class="home">
-    <div v-if="$store.getters.hasChanged" class="save">
-      <button @click="$store.dispatch('save')" class="btn big">
-        💾 Sauver
-      </button>
-    </div>
     <header>
       <img src="/img/icons/apple-touch-icon-120x120.png">
       <h1>Le Coffre Magique</h1>

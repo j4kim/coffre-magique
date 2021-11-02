@@ -2,7 +2,7 @@
   <div>
     <item-form
       title="Modifier"
-      @submit="$store.commit('editItem')"
+      @submit="$store.dispatch('update')"
     >
       <button @click="deleteItem" class="btn grey bold">
         Supprimer
@@ -26,7 +26,7 @@ export default {
   methods: {
     deleteItem () {
       if (confirm('Supprimer ?')) {
-        this.$store.commit('deleteItem')
+        this.$store.dispatch('delete')
         this.$router.push('/')
       }
     }
