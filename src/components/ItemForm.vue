@@ -3,18 +3,14 @@
     <router-link to="/">Retour</router-link>
     <h1>{{ title }}</h1>
     <div class="field">
-      <div>
-        <small>Nom</small>
-      </div>
+      <label>Nom</label>
       <input
         type="text"
         v-model="$store.state.editable.name"
       >
     </div>
     <div class="field">
-      <div>
-        <small>Degré</small>
-      </div>
+      <label>Degré</label>
       <input
         type="number"
         min="0"
@@ -23,9 +19,7 @@
       > %
     </div>
     <div class="field">
-      <div>
-        <small>Type</small>
-      </div>
+      <label>Type</label>
       <type-input v-model="$store.state.editable.type"/>
     </div>
     <hr>
@@ -59,8 +53,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .field {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  label {
+    font-size: 0.8em;
+    display: block;
+  }
 }
 </style>
