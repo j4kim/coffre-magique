@@ -2,11 +2,11 @@
   <div class="stock">
     <div>
       <div class="dose" @click="adaptDose">
-        <glass :volume="$store.state.editable.dose" />
+        <glass :volume="$store.state.editable.dose" ref="glass" />
         <small>{{ $store.state.editable.dose }} cl</small>
       </div>
       <button
-        @click="$store.commit('drink')"
+        @click="drink"
         class="btn purple"
       >Boire</button>
     </div>
@@ -43,6 +43,10 @@ export default {
       if (dose > 0) {
         this.$store.state.editable.dose = dose
       }
+    },
+    drink () {
+      this.$refs.glass.drink()
+      this.$store.commit('drink')
     }
   }
 }
