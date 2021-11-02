@@ -10,7 +10,8 @@ export default new Vuex.Store({
       items: []
     },
     savedData: '{items:[]}',
-    editable: {}
+    editable: {},
+    ready: false
   },
   
   getters: {
@@ -73,6 +74,9 @@ export default new Vuex.Store({
     },
     setIsAdmin (state, isAdmin) {
       state.isAdmin = isAdmin
+    },
+    setReady (state, ready = true) {
+      state.ready = ready
     }
   },
 
@@ -83,6 +87,7 @@ export default new Vuex.Store({
         .then(data => {
           commit('setIsAdmin', data.isAdmin)
           commit('reset', data.data)
+          commit('setReady')
         })
     },
     save ({ state, dispatch }) {
