@@ -3,6 +3,9 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 
-$folder = './database/';
-$files = scandir($folder);
-echo file_get_contents($folder . array_pop($files));
+$files = scandir('./database/');
+$lastfile = './database/' . array_pop($files);
+$data = json_decode(file_get_contents($lastfile));
+$isAdmin = true;
+
+echo json_encode(compact('data', 'isAdmin'));

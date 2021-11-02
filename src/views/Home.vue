@@ -9,7 +9,9 @@
       <img src="/img/icons/apple-touch-icon-120x120.png">
       <h1>Le Coffre Magique</h1>
     </header>
-    <main>
+    <main :style="{
+      pointerEvents: $store.state.isAdmin ? 'auto' : 'none'
+    }">
       <div
         v-for="(items, type) in $store.getters.types"
         :key="type"
@@ -34,7 +36,7 @@
         </router-link>
       </div>
     </main>
-    <router-link tag="button" to="/new" class="btn">
+    <router-link v-if="$store.state.isAdmin" tag="button" to="/new" class="btn">
       +
     </router-link>
   </div>

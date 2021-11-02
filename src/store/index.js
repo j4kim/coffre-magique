@@ -70,6 +70,9 @@ export default new Vuex.Store({
       if (volume > 0) {
         editable.bottles.push({ volume, remains: volume })
       }
+    },
+    setIsAdmin (state, isAdmin) {
+      state.isAdmin = isAdmin
     }
   },
 
@@ -77,7 +80,10 @@ export default new Vuex.Store({
     fetch ({ commit }) {
       fetch(`${process.env.VUE_APP_API}/fetch.php`)
         .then(r => r.json())
-        .then(data => commit('reset', data))
+        .then(data => {
+          commit('setIsAdmin', data.isAdmin)
+          commit('reset', data.data)
+        })
     },
     addNewItem ({ state, getters, commit }) {
       commit('add', {
