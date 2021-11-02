@@ -3,10 +3,11 @@
     <item-form
       title="Modifier"
       @submit="$store.commit('editItem')"
-    />
-    <button @click="deleteItem">
-      🗑
-    </button>
+    >
+      <button @click="deleteItem" class="btn grey bold">
+        Supprimer
+      </button>
+    </item-form>
   </div>
 </template>
 

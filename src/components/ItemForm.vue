@@ -26,9 +26,18 @@
     <h3>Stock</h3>
     <stock/>
     <hr>
-    <p>
-      <button type="submit" v-text="title" @click="submit"/>
-    </p>
+    <div class="buttons">
+      <slot/>
+      <div></div>
+      <button
+        class="btn bold"
+        type="submit"
+        @click="submit"
+        :disabled="$store.getters.incompleteForm"
+      >
+        ✔ Valider
+      </button>
+    </div>
   </div>
 </template>
 
@@ -60,5 +69,9 @@ export default {
     font-size: 0.8em;
     display: block;
   }
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

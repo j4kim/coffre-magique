@@ -28,7 +28,10 @@ export default new Vuex.Store({
     },
     byId: ({ data }) => (id) => {
       return data.items.find(i => i.id == id)
-    }
+    },
+    incompleteForm: ({ editable }) => {
+      return ['name', 'degree', 'type'].some(a => !editable[a])
+    } 
   },
 
   mutations: {

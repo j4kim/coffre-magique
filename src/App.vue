@@ -22,8 +22,8 @@ html, body {
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 4px;
-    cursor: pointer;
-    &:hover {
+    &:hover:not([disabled]) {
+      cursor: pointer;
       background-color: #a866cb;
     }
     &.purple {
@@ -33,10 +33,19 @@ html, body {
         background-color: #884da7;
       }
     }
+    &.grey {
+      background-color: lightgrey;
+      &:hover {
+        background-color: grey;
+      }
+    }
     &.big {
       padding: 8px 20px 10px;
       font-size: 16px;
       border-radius: 8px;
+      font-weight: 600;
+    }
+    &.bold {
       font-weight: 600;
     }
   }
