@@ -13,7 +13,7 @@ npm run serve
 
 Run server for the API
 ```
-php -S localhost:8000 -t public
+php -S localhost:8000 -t api
 ```
 
 ### Compiles and minifies for production
