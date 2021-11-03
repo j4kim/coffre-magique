@@ -1,4 +1,10 @@
 {
+  "short_name": "Coffre Magique",
+  "name": "Le Coffre Magique",
+  "background_color": "#ffcd69",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffcd69",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
