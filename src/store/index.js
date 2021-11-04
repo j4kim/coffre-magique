@@ -85,8 +85,7 @@ export default new Vuex.Store({
       fetch(`${process.env.VUE_APP_API}/fetch.php`)
         .then(r => r.json())
         .then(data => {
-          commit('setIsAdmin', data.isAdmin)
-          commit('reset', data.data)
+          commit('reset', data)
           commit('setReady')
         })
     },
@@ -113,5 +112,12 @@ export default new Vuex.Store({
       commit('deleteItem')
       dispatch('save')
     },
+    check () {
+      fetch(`${process.env.VUE_APP_API}/check.php`, {
+        method: "POST",
+        body: prompt("Mot de passe")
+      }).then(() => console.log('admin'))
+        .catch(() => console.log('not admin'))
+    }
   }
 })

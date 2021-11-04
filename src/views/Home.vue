@@ -1,9 +1,6 @@
 <template>
   <div class="home">
-    <header>
-      <img src="/img/icons/apple-touch-icon-120x120.png">
-      <h1>Le Coffre Magique</h1>
-    </header>
+    <magic-header></magic-header>
     <main :style="{
       pointerEvents: $store.state.isAdmin ? 'auto' : 'none'
     }">
@@ -36,6 +33,14 @@
     </router-link>
   </div>
 </template>
+
+<script>
+import MagicHeader from "@/components/MagicHeader"
+
+export default {
+  components: { MagicHeader }
+}
+</script>
 
 <style lang="scss">
 .home {
