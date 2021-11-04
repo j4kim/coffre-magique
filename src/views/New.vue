@@ -1,6 +1,6 @@
 <template>
   <item-form
-    title="Ajouter"
+    title="Nouvelle gnôle"
     @submit="$store.dispatch('create')"
   />
 </template>

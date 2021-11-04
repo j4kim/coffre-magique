@@ -1,7 +1,7 @@
 <template>
   <div>
     <item-form
-      title="Modifier"
+      title="Modifier la gnôle"
       @submit="$store.dispatch('update')"
     >
       <button @click="deleteItem" class="btn grey bold">
