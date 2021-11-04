@@ -1,6 +1,6 @@
 <template>
   <div class="stock">
-    <div>
+    <div v-if="$store.state.editable.bottles.length">
       <div class="dose" @click="adaptDose">
         <glass :volume="$store.state.editable.dose" ref="glass" />
         <small>{{ $store.state.editable.dose }} cl</small>
