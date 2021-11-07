@@ -10,7 +10,7 @@
     <vue-bottle
       v-model="ratio"
       :size="10 * Math.sqrt(this.bottle.volume)"
-      :speed="0.02"
+      :speed="0.03"
     />
     <small>
       {{ Math.round(bottle.remains) }} / {{ bottle.volume }} cl
