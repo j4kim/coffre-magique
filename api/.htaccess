@@ -1,0 +1,4 @@
+<Files "token.txt">
+Order allow,deny
+Deny from all
+</Files>
