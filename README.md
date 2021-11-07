@@ -1,4 +1,6 @@
-# coffre-magique
+# Le Coffre Magique
+
+Une application de gestion du coffre à gnôle d'Anthony.
 
 ## Project setup
 ```
@@ -21,10 +23,20 @@ php -S localhost:8000 -t api
 npm run build
 ```
 
-### Lints and fixes files
+## Générer un token pour accès admin
+
 ```
-npm run lint
+php -r "echo bin2hex(random_bytes(18));" > api/token.txt
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Générer les codes QR
+
+https://www.qrcode-monkey.com/fr/
+
+* Vers la carte
+  * https://le-coffre-magique.ch
+  * logo: [public/img/icons/icon.png](public/img/icons/icon.png)
+* Accès admin
+  * https://le-coffre-magique.ch/api/setAdmin.php?token= suivi du token
+  * logo: [public/img/icons/key.png](public/img/icons/key.png)
+* Dégradé: #A866CB #CA8B0E
