@@ -19,6 +19,9 @@
           :key="item.id"
           :to="`/edit/${item.id}`"
           class="item-link"
+          :style="{
+            textDecoration: isEmpty(item) ? 'line-through' : ''
+          }"
         >
           <div class="item">
             <div class="item-name">
@@ -36,6 +39,16 @@
     </router-link>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    isEmpty(item) {
+      return item.bottles.every(bottle => bottle.remains === 0)
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .home {
